@@ -1,0 +1,57 @@
+.footer
+  background-image: url("../images/footer_bg.jpg")
+  background-size: cover
+  background-position: center center
+  &-body
+    padding-top: 3em
+    padding-bottom: 3em
+    .row
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      &::after, &::before
+        display: none
+      .brand
+        +reset-margins()
+        .brand-logo
+          width: 100%
+      .social-networks
+        display: flex
+        align-items: center
+        justify-content: center
+        a
+          margin: 0.5em
+          font-size: 26px
+          color: white
+        .icon-facebook
+          &:hover
+            color: $color-facebook
+        .icon-feed
+          &:hover
+            color: $color-rss
+        .icon-twitter
+          &:hover
+            color: $color-twitter
+
+      .contact
+        padding-left: 5em
+        display: flex
+        flex-direction: column
+        align-content: flex-start
+        .btn-primary
+          width: 150px
+        a
+          margin-bottom: 1em
+
+@media (max-width: 991px)
+  .footer
+    &-body
+      .row
+        flex-direction: column
+        .social-networks
+          margin: 2em 0
+        .contact
+          text-align: center
+          padding-left: 0
+          .btn-primary
+            width: auto

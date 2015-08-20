@@ -5,17 +5,25 @@
       <a href="{{@blog.url}}"> <img class="brand-logo" src="{{asset "/images/TEDx_logo_black.png"}}" alt="TEDx_Parque_Jipiro_logo"/></a>
     </div>
 
-    <ul class="navigation">
-        {{#foreach navigation}}
-            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
-        {{/foreach}}
-    </ul>
+    <div class="container-primary-nav">
 
-    <ul>
-      <li> <a href="#"></a> </li>
-      <li> <a href="#"></a> </li>
-    </ul>
+      <ul class="navigation">
+          {{#foreach navigation}}
+              <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+          {{/foreach}}
+      </ul>
+
+      <ul class="sign-in hidden">
+        <li> <a class="link-red" href="#">Registrarse</a></li>
+        <li> <a class="link-red" href="#">Ingresar</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="btn-menu visible-xs">
+      <a href="#" class="glyphicon glyphicon-option-vertical"></a>
+    </div>
 
   </div>
 </nav>
-<span class="nav-cover"></span>
