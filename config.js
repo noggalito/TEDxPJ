@@ -28,6 +28,29 @@ config = {
         }
     },
 
+    staging: {
+      url: "https://tedxpj.herokuapp.com/",
+      mail: {
+        transport: "SMTP",
+        options: {
+          service: "Mailgun",
+          auth: {
+            user: process.env.MAILGUN_SMTP_LOGIN,
+            pass: process.env.MAILGUN_SMTP_PASSWORD
+          }
+        }
+      },
+      database: {
+        client: "postgres",
+        connection: process.env.DATABASE_URL,
+        debug: false
+      },
+      server: {
+        host: '0.0.0.0',
+        port: process.env.PORT
+      }
+    },
+
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
@@ -36,18 +59,16 @@ config = {
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
+        mail: {
+          transport: 'SMTP',
+          options: {
+            service: 'Mailgun',
+              auth: {
+                user: 'postmaster@appc1ca874dfbd64aba92f31743e02cd5eb.mailgun.org',
+                pass: '5a55f4e7a238fe244b3f3ab6fae46831'
+              }
+            }
+         },
 
         database: {
             client: 'sqlite3',
