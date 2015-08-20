@@ -28,6 +28,29 @@ config = {
         }
     },
 
+    staging: {
+      url: "https://tedxpj.herokuapp.com/",
+      mail: {
+        transport: "SMTP",
+        options: {
+          service: "Mailgun",
+          auth: {
+            user: process.env.MAILGUN_SMTP_LOGIN,
+            pass: process.env.MAILGUN_SMTP_PASSWORD
+          }
+        }
+      },
+      database: {
+        client: "postgres",
+        connection: process.env.DATABASE_URL,
+        debug: false
+      },
+      server: {
+        host: '0.0.0.0',
+        port: process.env.PORT
+      }
+    },
+
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
