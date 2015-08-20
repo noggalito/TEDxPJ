@@ -59,18 +59,16 @@ config = {
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
+        mail: {
+          transport: 'SMTP',
+          options: {
+            service: 'Mailgun',
+              auth: {
+                user: 'postmaster@appc1ca874dfbd64aba92f31743e02cd5eb.mailgun.org',
+                pass: '5a55f4e7a238fe244b3f3ab6fae46831'
+              }
+            }
+         },
 
         database: {
             client: 'sqlite3',
