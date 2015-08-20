@@ -1,0 +1,104 @@
+nav
+  border-bottom: 4px solid $color-redTEDx
+  box-shadow: 0px 2px 5px rgba(black, 0.5)
+  position: relative
+  z-index: 10
+  background: white
+  .container
+    display: flex
+    justify-content: flex-start
+    &::before, &::after
+      display: none
+
+    .brand
+      width: 250px
+      &-logo
+        width: 100%
+
+    &-primary-nav
+      display: flex
+      justify-content: space-between
+      width: 100%
+      .navigation
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        padding: 0
+        margin: 0
+        li
+          list-style: none
+          margin: 0 1em
+          a
+            transition: all 0.3s
+      .nav-current
+        a
+          color: $color-redTEDx-hover
+
+    .sign-in
+      display: flex
+      align-items: center
+      padding: 0
+      margin: 0
+      list-style: none
+      li
+        margin-right: 1em
+
+    .btn-menu
+      display: flex
+      align-items: center
+      a
+        padding: 15px
+        font-size: 1.2em
+
+@media (max-width: 767px)
+  nav
+    .container
+      justify-content: space-between
+      padding-left: 0
+      padding-right: 0
+      .brand
+        width: 100%
+        background: white
+        z-index: 100
+        img
+          width: 15em
+
+      &-primary-nav
+        flex-direction: column
+        position: absolute
+        left: 0
+        top: 0
+        transform: translateY(-100%)
+        background: white
+        border-bottom: 4px solid $color-redTEDx
+        z-index: 1
+        transition: 0.3s ease-out
+        opacity: 0
+
+        .navigation, .sign-in
+          flex-direction: column
+          text-align: center
+          li
+            width: 100%
+            a
+              display: block
+              padding: 1.1em
+
+      .active
+        transform: translateY(0%) !important
+        top: 7em
+        opacity: 1
+
+      .visible-xs
+        display: flex !important
+      .btn-menu
+        background: white
+        z-index: 2
+        padding-right: 1em
+
+@media (min-width: 768px) and (max-width: 991px)
+  nav
+    .container
+      width: 100%
+      &-primary-nav
+        font-size: 0.7em
