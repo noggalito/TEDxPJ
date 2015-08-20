@@ -1,0 +1,21 @@
+<nav>
+  <div class="container">
+
+    <div class="brand">
+      <a href="{{@blog.url}}"> <img class="brand-logo" src="{{asset "/images/TEDx_logo_black.png"}}" alt="TEDx_Parque_Jipiro_logo"/></a>
+    </div>
+
+    <ul class="navigation">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+
+    <ul>
+      <li> <a href="#"></a> </li>
+      <li> <a href="#"></a> </li>
+    </ul>
+
+  </div>
+</nav>
+<span class="nav-cover"></span>
