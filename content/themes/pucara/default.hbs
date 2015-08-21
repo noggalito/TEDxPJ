@@ -22,7 +22,7 @@
   <body class="{{body_class}}">
 
     {{! Navigation from Partials}}
-    {{navigation}}
+    {{> "_nav-bar"}}
 
     {{! Content Body}}
     {{{body}}}
@@ -30,12 +30,20 @@
 
 
     {{!Content Footer}}
-    {{ghost_foot}}
     {{> "_footer"}}
+    {{ghost_foot}}
 
     {{!Bootstrap scripts}}
     <script type="text/javascript" src="{{asset "js/bootstrap.js"}}"></script>
     <script src="{{asset "js/min/nav-min.js"}}"></script>
+
+    {{! just load scripts in home page}}
+    {{#is "index"}}
+      <script src="{{asset "js/min/index-min.js"}}"></script>
+      <script src="{{asset "js/min/counter-min.js"}}"></script>
+    {{/is}}
+
+
 
 </body>
 </html>

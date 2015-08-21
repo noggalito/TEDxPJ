@@ -1,3 +1,44 @@
 =reset-margins()
   margin: 0
   padding: 0
+
+=post-hover()
+  .post
+    transition: all 0.2s ease-out
+    @content
+    &:hover
+      transform: scale(1.2)
+      z-index: 2
+      box-shadow: 0 0 7px rgba(black, 0.5)
+
+=best-paddings()
+  padding-left: 10px
+  padding-right: 10px
+
+=display-flex($direction: row, $justify-content: flex-start ,$align-items: flex-start )
+
+  @if $justify-content == start
+    $justify-content: flex-start
+  @else if $justify-content == end
+    $justify-content: flex-end
+
+  @if $align-items == start
+    $align-items: flex-start
+  @else if $align-items == end
+    $align-items: flex-end
+
+  display: flex
+  align-items: $align-items
+  justify-content: $justify-content
+  flex-direction: $direction
+
+=dots-image($height: 1px, $opacity: 1)
+  position: absolute
+  width: 100%
+  height: $height
+  opacity: $opacity
+  background: transparent
+  background-image: url("../images/dots_for_bg.png")
+  background-repeat: repeat
+  top: 0
+  left: 0
