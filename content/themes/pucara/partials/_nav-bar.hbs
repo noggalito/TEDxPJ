@@ -1,11 +1,11 @@
 <nav id="nav">
   <div class="container">
 
-    <div class="brand">
+    <header class="nav-header">
       <a href="{{@blog.url}}"> <img class="brand-logo" src="{{asset "/images/TEDx_logo_black.png"}}" alt="TEDx_Parque_Jipiro_logo"/></a>
-    </div>
+    </header>
 
-    <div class="container-primary-nav">
+    <section class="nav-body">
 
       <ul class="navigation">
           {{navigation}}
@@ -16,12 +16,12 @@
         <li> <a class="link-red" href="#">Ingresar</a></li>
       </ul>
 
-    </div>
+    </section>
 
 
-    <div class="btn-menu visible-xs">
+    <footer class="nav-footer btn-menu visible-xs link-red">
       <a href="#" class="glyphicon glyphicon-option-vertical"></a>
-    </div>
+    </footer>
 
   </div>
 </nav>

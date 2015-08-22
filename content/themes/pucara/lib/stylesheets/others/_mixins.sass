@@ -6,10 +6,23 @@
   .post
     transition: all 0.2s ease-out
     @content
+
+    &-header
+      transform: translateY(80%)
+      transition: 0.2s
+    &-excerpt
+      // display: none
+      opacity: 0
+      transition: 0.4s
     &:hover
       transform: scale(1.2)
       z-index: 2
       box-shadow: 0 0 7px rgba(black, 0.5)
+      & .post-excerpt
+        opacity: 1
+        transform: translateY(0%)
+      & .post-header
+        transform: translateY(-10%)
 
 =best-paddings()
   padding-left: 10px
@@ -48,3 +61,10 @@
   color: $value
   &:hover
     color: darken($value, $n)
+
+=buttover($value : red)
+  $dark-value: darken($value, 10%)
+  &:hover, &:focus, &:active
+    background: $dark-value
+  &:active:hover
+    background: lighten($dark-value,5%)

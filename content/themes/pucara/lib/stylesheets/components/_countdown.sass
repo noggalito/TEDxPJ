@@ -1,25 +1,24 @@
-$countdown-height: 600px
 .countdown
   background-image: url("../images/counter_bg.jpg")
   background-size: cover
   background-position: top center
   position: relative
+  &::before
+    content: ""
+    +dots-image($countdown-height, 0.5)
+
   .container
     overflow: hidden
-
-    .dots
-      +dots-image($countdown-height, 0.4)
 
     .TEDx-event
       +display-flex(column, center, center)
       height: $countdown-height
       padding-top: 2em
       .next-event
-        +display-flex(row, center, start)
+        +display-flex(column, center, start)
         z-index: 1
         .logo
-          width: $size-cover-logo
-
+          width: 100%
       .counter
         +display-flex(row,center,center)
         margin-top: 2em
@@ -37,3 +36,12 @@ $countdown-height: 600px
       .btn
         margin-top: 1em
         z-index: 1
+
+@media (min-width: 768px)
+  .countdown
+    .container
+      .TEDx-event
+        .next-event
+          +display-flex(row, center, start)
+          .logo
+            width: $countdown-width-logo

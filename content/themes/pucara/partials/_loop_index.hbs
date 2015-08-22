@@ -1,28 +1,39 @@
 {{#foreach posts}}
-  {{#if @first}}
-    <article class="{{post_class}} post-{{@index}}">
-        <header class="post-header">
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <time class="post-date" datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
-        </footer>
-    </article>
-  {{else}}
-    <article class="{{post_class}} post-{{@index}}">
-        <header class="post-header">
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <time class="post-date" datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
-        </footer>
-    </article>
 
+  {{#if @first}}
+
+    <div class="new-notice col-md-6 col-xs-12">
+          <div class="white-content {{post_class}} post-{{@index}} col-md-12" style="{{#if image}} background-image: url('{{image}}');background-position:center center;background-size:cover; {{/if}}">
+            <header class="post-header">
+                <a href="{{url}}"><h4 class="post-title">{{{title}}}</h4></a>
+            </header>
+            <section class="post-excerpt">
+                <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+            </section>
+            <footer class="post-meta">
+                <time class="post-date" datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
+                <a class="link-red" href="{{url}}">leer más</a>
+            </footer>
+        </div>
+    </div>
   {{/if}}
 {{/foreach}}
+
+<div class="others col-md-6 col-sm-12">
+{{#foreach posts}}
+  {{^if @first}}
+  <article class="col-md-6 col-xs-12 white-content {{post_class}} post-{{@index}} " style="{{#if image}} background-image: url('{{image}}');background-position:center center;background-size:cover; {{/if}}">
+      <header class="post-header">
+          <a href="{{url}}"><h4 class="post-title">{{{title}}}</h4></a>
+      </header>
+      <section class="post-excerpt">
+          <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+      </section>
+      <footer class="post-meta">
+          <time class="post-date" datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
+          <a class="link-red" href="{{url}}">leer más</a>
+      </footer>
+  </article>
+  {{/if}}
+{{/foreach}}
+</div>

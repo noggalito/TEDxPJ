@@ -1,1 +1,1 @@
-!function(){$(".btn-menu a").on("click",function(){$(".container-primary-nav").toggleClass("active")})}();
+!function(){$(".btn-menu a").on("click",function(){$(".nav-body").toggleClass("active")})}();
