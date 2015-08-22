@@ -42,3 +42,9 @@
   background-repeat: repeat
   top: 0
   left: 0
+
+=color-and-hover($value: #D3DD79, $transition: ease-out, $n: 10%)
+  transition: 0.2s $transition
+  color: $value
+  &:hover
+    color: darken($value, $n)

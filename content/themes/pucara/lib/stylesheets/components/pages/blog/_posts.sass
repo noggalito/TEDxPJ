@@ -1,0 +1,62 @@
+.blog-post
+  margin-top: 5em
+  margin-bottom: 5em
+  .container
+    +display-flex(column, center, center)
+    .all-post
+      .post
+        margin: 0.5em
+        figure
+          position: relative
+          img
+            height: 250px
+          .post-header
+            position: absolute
+            bottom: 1em
+            left: 0
+            right: 0
+            text-align: center
+            h4
+              text-shadow: 1px 1px 2px rgba(black, 0.5)
+
+        .caption
+          .post-excerpt
+            margin-top: 2em
+            margin-bottom: 2em
+          .post-meta
+            +display-flex(row, space-between, center )
+
+
+@media (min-width: 768px)
+  .blog-post
+    .container
+      .all-post
+        .col-sm-6
+          width: 47%
+
+
+@media (min-width: 992px)
+  .blog-post
+    .container
+      .all-post
+        .col-md-6
+          width: 48%
+        .post
+          figure
+            img
+              height: 300px
+
+@media (min-width: 1200px)
+  .blog-post
+    .container
+      .all-post
+        .col-md-6
+          width: 48%
+        .post
+          figure
+            img
+              width: 100%
+              height: 330px
+          .caption
+            .post-excerpt
+              height: 55px

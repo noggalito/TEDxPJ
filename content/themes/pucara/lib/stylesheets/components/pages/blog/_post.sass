@@ -1,0 +1,54 @@
+.post-individual
+  .post-header
+    overflow: hidden
+    position: relative
+    height: 500px
+    border-bottom: 2px solid $color-redTEDx
+    h1
+      position: absolute
+      bottom: 1em
+      margin-left: 2em
+      text-shadow: 2px 2px 4px rgba(black, 0.5)
+
+  .container
+    margin-top: 2em
+    padding-top: 2em
+    margin-bottom: 15em
+    padding-bottom: 2em
+
+    .share
+      +display-flex(column, center, center)
+      padding: 1em 0
+
+      &-links
+        .icon-facebook
+          +color-and-hover($color-facebook)
+        .icon-google-plus
+          +color-and-hover($color-google)
+        .icon-twitter
+          +color-and-hover($color-twitter)
+        a
+          font-size: 34px
+      h5
+        text-align: center
+
+    .post-content
+      .post-meta
+        text-align: right
+        margin-bottom: 3em
+      & > p
+        font-size: 17px
+        font-family: Raleway
+        line-height: 28px
+        margin-bottom: 30px
+
+@media (min-width: 992px)
+  .post-individual
+    .container
+      .share
+        +display-flex(column, center, center)
+
+        &-links
+          +display-flex(column, center, center)
+          a
+            margin-top: 0.5em

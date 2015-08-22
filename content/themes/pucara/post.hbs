@@ -1,2 +1,52 @@
 {{!< default}}
-<h1>Post Here</h1>
+
+{{#post}}
+
+<section class="post-individual">
+
+  <header class="white-content post-header {{#if image}}" style="background-image: url('{{image}}');background-position:center center;background-size:cover;{{/if}}">
+      {{#unless image}}
+        <div style="color: #B8B8B8; text-align:center;transform:translateY(50%);width:100%; height:100%;">
+          <h4>No existe una imagen para este post :(</h4>coloca una porfavor
+        </div>
+      {{/unless}}
+    <h1 class="post-title">{{title}}</h1>
+  </header>
+
+  <div class="container">
+    <article class="{{post_class}}">
+
+      <section class="share col-md-1">
+        <h5>Click y compartir</h5>
+        <div class="share-links">
+          <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+              onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+              <span class="hidden">Twitter</span>
+          </a>
+          <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+              onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+              <span class="hidden">Facebook</span>
+          </a>
+          <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+             onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <span class="hidden">Google+</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="post-content col-md-10">
+        <div class="post-meta">
+          <h5>
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
+              {{date format="DD MMMM YYYY"}}
+            </time>
+          </h5>
+        </div>
+        {{content}}
+      </section>
+
+    </article>
+  </div>
+</section>
+
+{{/post}}

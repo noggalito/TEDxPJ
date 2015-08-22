@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -27,8 +27,6 @@
     {{! Content Body}}
     {{{body}}}
 
-
-
     {{!Content Footer}}
     {{> "_footer"}}
     {{ghost_foot}}
@@ -38,7 +36,7 @@
     <script src="{{asset "js/min/nav-min.js"}}"></script>
 
     {{! just load scripts in home page}}
-    {{#is "index"}}
+    {{#is "home"}}
       <script src="{{asset "js/min/index-min.js"}}"></script>
       <script src="{{asset "js/min/counter-min.js"}}"></script>
     {{/is}}
