@@ -1,10 +1,13 @@
 .footer
   background-image: url("../images/footer_bg.jpg")
   background-size: cover
-  background-position: center center
+  background-position: top center
+  border-top: 2px solid $color-redTEDx
   &-body
     padding-top: 3em
     padding-bottom: 3em
+    &::after, &::before
+      display: none
     .row
       display: flex
       align-items: center
@@ -13,7 +16,7 @@
         display: none
       .brand
         +reset-margins()
-        .brand-logo
+        &-logo
           width: 100%
       .social-networks
         display: flex
@@ -43,11 +46,50 @@
         a
           margin-bottom: 1em
 
+  &-licences
+    background: $color-license-bg
+    width: 100%
+    padding: 0.5em 0
+    .container
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &::before, &::after
+        display: none
+      & > div p
+        margin: 0
+
+      .authors
+        color: $color-lightTitle
+        margin: 0.5em 0
+
+      .footer-navigation
+        display: flex
+        list-style-type: none
+        margin: 0.5em 0
+        .nav-current
+          a
+            color: $color-license-nav-current
+        li
+          margin-right: 1em
+          &:last-child
+            margin-right: 0
+          a
+            color: white
+
+      .licence
+        color: $color-lightTitle
+        margin: 0.5em 0
+
 @media (max-width: 991px)
   .footer
     &-body
       .row
         flex-direction: column
+        .brand
+          &-logo
+            width: $size-footer-logo-xs
+
         .social-networks
           margin: 2em 0
         .contact
@@ -55,3 +97,11 @@
           padding-left: 0
           .btn-primary
             width: auto
+
+    &-licences
+      .container
+        flex-flow: column wrap
+        .footer-navigation
+          +display-flex(column, center, center)
+          li
+            margin-right: 0

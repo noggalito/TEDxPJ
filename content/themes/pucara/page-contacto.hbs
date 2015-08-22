@@ -1,0 +1,45 @@
+{{!< default}}
+
+{{#post}}
+
+<section class="about-content">
+  <div class="container">
+
+    <div class="about-title row">
+      <span class="col-md-1"></span>
+      <h1 class="col-md-10 post-title">{{title}}</h1>
+    </div>
+    <article class="{{post_class}} row">
+      <span class="col-md-1"></span>
+      <section class="post-content col-md-10 col-xs-12">
+          {{content}}
+      </section>
+    </article>
+
+
+  <div class="contact-content row">
+
+    <article class="contact-form">
+      {{> "_form_contact"}}
+    </article>
+
+    <span class="vertical-line"></span>
+
+    <article class="contact-info">
+      <div class="meta">
+        <div class="info-meta">
+          <a class="icon-home" href="">Vivimos aqui en Loja :P</a>
+          <a class="icon-mobile" href="callto:0989595742">0989595742</a>
+          <a class="icon-envelop" href="mailto:info@noggalito.com">info@noggalito</a>
+          <a class="icon-facebook" href="//facebook.com/TEDxParqueJipiro">facebook/TEDxParqueJipiro</a>
+          <a class="icon-twitter" href="//twitter.com/TEDxPJipiro">@TEDxPJipiro</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+</div>
+</section>
+
+{{/post}}

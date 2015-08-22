@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -9,11 +9,16 @@
     {{ghost_head}}
 
     {{! Bootstrap Styles}}
-    <link rel="stylesheet" href="{{asset "/css/bootstrap.css"}}">
+    <link rel="stylesheet" href="{{asset "/css/bootstrap.min.css"}}">
+    <link rel="stylesheet" href="{{asset "/css/bootstrap-theme.min.css"}}">
 
     {{! Personal Styles}}
     <link rel="stylesheet" href="{{asset "/css/components.css"}}">
     <link rel="stylesheet" href="{{asset "/css/icomoon_styles.css"}}">
+
+    {{#is "index"}}
+      <link rel="stylesheet" href="{{asset "/css/animate.css"}}"/>
+    {{/is}}
 
 
 
@@ -22,20 +27,26 @@
   <body class="{{body_class}}">
 
     {{! Navigation from Partials}}
-    {{navigation}}
+    {{> "_nav-bar"}}
 
     {{! Content Body}}
     {{{body}}}
 
-
-
     {{!Content Footer}}
-    {{ghost_foot}}
     {{> "_footer"}}
+    {{ghost_foot}}
 
     {{!Bootstrap scripts}}
-    <script type="text/javascript" src="{{asset "js/bootstrap.js"}}"></script>
-    <script src="{{asset "js/min/nav-min.js"}}"></script>
+    <script src="{{asset "/js/bootstrap.js"}}"></script>
+    <script src="{{asset "/js/min/nav-min.js"}}"></script>
+
+    {{! just load scripts in home page}}
+    {{#is "index"}}
+      <script src="{{asset "/js/min/index-min.js"}}"></script>
+      <script src="{{asset "/js/min/counter-min.js"}}"></script>
+    {{/is}}
+
+
 
 </body>
 </html>

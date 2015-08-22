@@ -1,0 +1,61 @@
+.cover
+  position: relative
+  overflow: hidden
+  height: $cover-height
+
+  &-image
+    width: 100%
+    height: 100%
+    position: absolute
+    .dots
+      +dots-image($cover-height, 0.5)
+    img
+      width: 100%
+      height: auto
+
+  &-content
+    position: absolute
+    top: 2em
+    left: 0
+    right: 0
+    .container
+      &::before, &::after
+        display: none
+      &-logo
+        width: $size-cover-logo
+        .logo
+          width: 100%
+      .blog-description
+        text-align: right
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        & > *
+          width: $size-cover-description
+    .btn-about
+      margin-top: 6em
+      display: flex
+      justify-content: center
+
+@media (max-width: 991px)
+  .cover
+    &-image
+      img
+        width: auto
+        height: 100%
+
+    &-content
+      .container
+        width: 100%
+        &-logo
+          width: $size-cover-logo-xs
+          margin: 0 auto
+        .blog-description
+          margin-top: 3em
+          justify-content: center
+          align-items: center
+          & > *
+            text-align: center
+            width: 100%
+      .btn-about
+        margin-top: 3em

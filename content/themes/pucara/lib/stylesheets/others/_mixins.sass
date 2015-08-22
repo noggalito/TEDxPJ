@@ -1,3 +1,70 @@
 =reset-margins()
   margin: 0
   padding: 0
+
+=post-hover()
+  .post
+    transition: all 0.2s ease-out
+    @content
+
+    &-header
+      transform: translateY(80%)
+      transition: 0.2s
+    &-excerpt
+      // display: none
+      opacity: 0
+      transition: 0.4s
+    &:hover
+      transform: scale(1.2)
+      z-index: 2
+      box-shadow: 0 0 7px rgba(black, 0.5)
+      & .post-excerpt
+        opacity: 1
+        transform: translateY(0%)
+      & .post-header
+        transform: translateY(-10%)
+
+=best-paddings()
+  padding-left: 10px
+  padding-right: 10px
+
+=display-flex($direction: row, $justify-content: flex-start ,$align-items: flex-start )
+
+  @if $justify-content == start
+    $justify-content: flex-start
+  @else if $justify-content == end
+    $justify-content: flex-end
+
+  @if $align-items == start
+    $align-items: flex-start
+  @else if $align-items == end
+    $align-items: flex-end
+
+  display: flex
+  align-items: $align-items
+  justify-content: $justify-content
+  flex-direction: $direction
+
+=dots-image($height: 1px, $opacity: 1)
+  position: absolute
+  width: 100%
+  height: $height
+  opacity: $opacity
+  background: transparent
+  background-image: url("../images/dots_for_bg.png")
+  background-repeat: repeat
+  top: 0
+  left: 0
+
+=color-and-hover($value: #D3DD79, $transition: ease-out, $n: 10%)
+  transition: 0.2s $transition
+  color: $value
+  &:hover
+    color: darken($value, $n)
+
+=buttover($value : red)
+  $dark-value: darken($value, 10%)
+  &:hover, &:focus, &:active
+    background: $dark-value
+  &:active:hover
+    background: lighten($dark-value,5%)

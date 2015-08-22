@@ -3,11 +3,12 @@
 
 /*Typography*/
 html
-  font-family: "Helvetica Neue","Helvetica", "Arial"
+  font-family: "Helvetica Neue","Helvetica", "Arial" !important
   color: $color-font
 
 h1
   font-size: 42px
+  font-weight: $light
 h2
   font-size: 32px
   font-family: Raleway
@@ -17,7 +18,7 @@ h3
   font-weight: $light
 h4
   font-size: 18px
-  font-weight: $ultra-bold
+  font-weight: $ultra-bold !important
 h5
   font-weight: $bold !important
 
@@ -39,6 +40,7 @@ p
   font-size: 18px
   font-family: Raleway
   line-height: 26px
+
 .link
   font-weight: $normal !important
 
@@ -49,13 +51,13 @@ p
   &:hover
     color: $color-redTEDx-hover !important
 
-.content-white
-  & > *
+.white-content
+  & *
     color: white
     font-weight: $light
   a
     &:hover
-      color: $color-lightTitle
+      color: darken(white, 10%)
   .btn
     font-weight: $normal
     &:hover

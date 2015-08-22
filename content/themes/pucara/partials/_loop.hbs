@@ -1,0 +1,27 @@
+{{#foreach posts}}
+
+  <article class="{{post_class}} thumbnail col-md-6 col-sm-6 col-xs-12 post-{{@index}}">
+
+    <figure>
+      {{#if image}}
+        <a href="{{url}}"><img src="{{image}}" alt="image-blog-{{title}}" /></a>
+        {{else}}
+        <a href="{{url}}"><img src="{{asset "images/thumbnail.svg"}}" alt="thumbnail" /> </a>
+      {{/if}}
+      <header class="post-header white-content">
+        <a href="{{url}}"><h4 class="post-title">{{{title}}}</h4></a>
+      </header>
+    </figure>
+
+    <div class="caption">
+      <section class="post-excerpt">
+          <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+      </section>
+      <footer class="post-meta">
+          <time class="post-date" datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
+          <a class="btn btn-primary" href="{{url}}"> Leer más</a>
+      </footer>
+    </div>
+
+  </article>
+{{/foreach}}

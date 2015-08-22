@@ -1,8 +1,21 @@
 {{!< default}}
 
 {{#post}}
-<div class="container">
-  {{content}}
-</div>
+
+<section class="about-content">
+  <div class="container">
+    <div class="about-title">
+      <h1 class="col-md-10 post-title">{{title}}</h1>
+    </div>
+    <article class="{{post_class}}">
+      <section class="post-content col-md-6 col-xs-12">
+          {{content}}
+      </section>
+      <figure class="brand col-md-5">
+        <img src="{{@blog.logo}}" alt="{{@blog.title}}-logo" class="logo"/>
+      </figure>
+    </article>
+  </div>
+</section>
 
 {{/post}}

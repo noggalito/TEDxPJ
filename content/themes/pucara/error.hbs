@@ -1,10 +1,22 @@
-<nav class="main-nav overlay clearfix">
-    {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-    {{#if @blog.navigation}}
-        <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-    {{/if}}
-</nav>
+<link rel="stylesheet" href="{{asset "/css/bootstrap.css"}}">
+<link rel="stylesheet" href="{{asset "/css/components.css"}}">
+<link rel="stylesheet" href="{{asset "/css/animate.css"}}">
 
-<main class="content" role="main">
-	<p>Error Page</p>
-</main>
+<section class="page-error">
+    <article class="error-messages">
+      <h1><strong>{{code}}</strong></h1>
+      <h3>{{message}}</h3>
+      <h4>Estas perdido?</h4>
+    </article>
+    <figure class="col-md-6 brand animated wobble">
+      {{#if @blog.logo}}
+        <img src="{{@blog.logo}}" alt="{{@blog.title}}-logo" />
+      {{else}}
+        <h1> UPS!!</h1>
+      {{/if}}
+    </figure>
+    <div class="btn-return">
+      <a class="btn btn-primary" href="{{@blog.url}}"> &larr; Regresar</a>
+    </div>
+
+</section>
