@@ -1,0 +1,19 @@
+<section class="post-individual">
+  <header class="white-content post-header {{#if image}}" style="background-image: url('{{image}}');background-position:center center;background-size:cover;{{/if}}">
+      {{#unless image}}
+        <div style="color: #B8B8B8; text-align:center;transform:translateY(50%);width:100%; height:100%;">
+          <h4>No existe una imagen para este post :(</h4>coloca una porfavor
+        </div>
+      {{/unless}}
+    <h1 class="post-title">{{title}}</h1>
+  </header>
+
+  <div class="container">
+      <article class="{{post_class}}">
+        <span class="col-md-1"></span>
+        <section class="post-content col-md-10 col-xs-12">
+            {{content}}
+        </section>
+      </article>
+  </div>
+</section>

@@ -1,3 +1,17 @@
 {{!< default}}
+<section class="blog-post">
+  <div class="container">
 
-<h1>Default Tags Here</h1>
+    {{#tag}}
+      <h1 style="margin-bottom: 1em;"> {{name}} </h1>
+    {{/tag}}
+    <div class="all-post">
+      {{> "_loop"}}
+    </div>
+
+    <div class="pagination">
+      {{pagination}}
+    </div>
+
+  </div>
+</section>
