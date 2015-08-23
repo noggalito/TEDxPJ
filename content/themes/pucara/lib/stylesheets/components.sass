@@ -1,12 +1,34 @@
-@import "others/*"
+@import "others/_mixins"
+@import "others/_variables"
 
 /*importing stylesheets of pages*/
-@import "components/*"
-@import "components/pages/about/*"
-@import "components/pages/blog/*"
-@import "components/pages/contact/*"
-@import "components/pages/error/*"
-@import "components/pages/index/*"
-@import "components/pages/voluntarios/*"
+
+//COMPONENTS
+@import "components/_buttons"
+@import "components/_countdown"
+@import "components/_footer"
+@import "components/_nav"
+@import "components/_typography"
+
+//ABOUT
+@import "components/pages/about/_about_page"
+
+//BLOG
+@import "components/pages/blog/_post"
+@import "components/pages/blog/_posts"
+
+//CONTACT
+@import "components/pages/contact/_contact_page"
+
+//INDEX
+@import "components/pages/index/_index_cover"
+@import "components/pages/index/_index_posts"
+
+//VOLUNTERS
+@import "components/pages/voluntarios/_volunteers"
+
+//ERROR
+@import "components/pages/error/error"
+
 .animated-in
   opacity: 0
