@@ -7,10 +7,10 @@
   <header class="white-content post-header {{#if image}}" style="background-image: url('{{image}}');background-position:center center;background-size:cover;{{/if}}">
       {{#unless image}}
         <div style="color: #B8B8B8; text-align:center;transform:translateY(50%);width:100%; height:100%;">
-          <h4>No existe una imagen para este post :(</h4>coloca una porfavor
+          <h4 class="title-image">No existe una imagen para este post :(</h4>coloca una porfavor
         </div>
       {{/unless}}
-    <h1 class="post-title">{{title}}</h1>
+    <h1 class="post-title" style="{{#unless image}} color: black; {{/unless}}">{{title}}</h1>
   </header>
 
   <div class="container">
