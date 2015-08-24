@@ -47,7 +47,7 @@
           margin-bottom: 1em
 
   &-licences
-    background: $color-license-bg
+    background: rgba(gray, 0.25)
     width: 100%
     padding: 0.5em 0
     .container
@@ -59,12 +59,16 @@
       & > div p
         margin: 0
 
-      .authors
-        color: $color-lightTitle
+      .licence
+        color: lighten($color-lightTitle, 35%)
         margin: 0.5em 0
+        p
+          line-height: 1
+          font-size: 8px
+
 
       .footer-navigation
-        display: flex
+        +display-flex(row, center , center)
         list-style-type: none
         margin: 0.5em 0
         .nav-current
@@ -76,10 +80,18 @@
             margin-right: 0
           a
             color: white
+            font-size: 12px
 
-      .licence
-        color: $color-lightTitle
+
+      .authors
+        font-size: 10px
+        text-align: center
+        color: lighten($color-lightTitle, 35%)
         margin: 0.5em 0
+        a
+          font-size: 10px
+          color: lighten($color-link, 35%)
+
 
 @media (max-width: 991px)
   .footer
