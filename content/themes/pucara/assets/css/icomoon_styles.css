@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?-cdg1cm');
-	src:url('../fonts/icomoon.eot?#iefix-cdg1cm') format('embedded-opentype'),
-		url('../fonts/icomoon.ttf?-cdg1cm') format('truetype'),
-		url('../fonts/icomoon.woff?-cdg1cm') format('woff'),
-		url('../fonts/icomoon.svg?-cdg1cm#icomoon') format('svg');
+	src:url('../fonts/icomoon.eot?lyjq38');
+	src:url('../fonts/icomoon.eot?#iefixlyjq38') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?lyjq38') format('truetype'),
+		url('../fonts/icomoon.woff?lyjq38') format('woff'),
+		url('../fonts/icomoon.svg?lyjq38#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -49,6 +49,21 @@
 }
 .icon-spinner7:before {
 	content: "\e60c";
+}
+.icon-happy2:before {
+	content: "\e612";
+}
+.icon-wink2:before {
+	content: "\e613";
+}
+.icon-cross:before {
+	content: "\e614";
+}
+.icon-checkmark:before {
+	content: "\e615";
+}
+.icon-checkbox-checked:before {
+	content: "\e616";
 }
 .icon-share:before {
 	content: "\e60d";

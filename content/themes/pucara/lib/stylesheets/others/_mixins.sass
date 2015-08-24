@@ -4,25 +4,36 @@
 
 =post-hover()
   .post
+    position: relative
     transition: all 0.2s ease-out
     @content
 
     &-header
-      transform: translateY(80%)
-      transition: 0.2s
+      z-index: 1
     &-excerpt
-      // display: none
-      opacity: 0
+      display: none
       transition: 0.4s
+      z-index: 1
+    &-meta
+      z-index: 1
     &:hover
-      transform: scale(1.2)
+      transform: scale(1.1)
       z-index: 2
       box-shadow: 0 0 7px rgba(black, 0.5)
+      &::before
+        content: ""
+        position: absolute
+        width: 100%
+        height: 100%
+        background: rgba($button-info, 0.5)
+        top: 0
+        left: 0
       & .post-excerpt
         opacity: 1
-        transform: translateY(0%)
+        // transform: translateY(0%)
+        display: block
       & .post-header
-        transform: translateY(-10%)
+        // transform: translateY(-10%)
 
 =best-paddings()
   padding-left: 10px

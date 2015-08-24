@@ -1,30 +1,38 @@
-<form class="form" method="post" action="/">
+<form id="form" data-toggle="validator" role="form" class="form" method="POST" action="/mail">
   <div class="form-group">
-    <label>Nombre</label>
+    <label>Nombre Completo</label>
     <input type="text" name="name" placeholder="Ingresa tu nombre" class="form-control">
   </div>
 
-  <div class="form-group">
-    <label>Apellidos</label>
-    <input type="text" name="last_name" placeholder="Ingresa tus apellidos" class="form-control">
-  </div>
-
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <label>Email</label>
-    <input type="email" name="email" placeholder="Ingresa tu email" class="form-control">
+    <div class="input group">
+      <input type="email" name="email" placeholder="Ingresa tu email" class="form-control" required>
+    </div>
+    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    <div class="help-block with-errors"></div>
+  </div>
+
+  <div class="form-group has-feedback">
+    <label>Asunto</label>
+    <input type="text" name="subject" placeholder="Asunto" class="form-control" required>
+    <div class="help-block with-errors"></div>
+    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
   </div>
 
   <div class="form-group">
-    <label>C.I</label>
-    <input type="text" name="ci" placeholder="Ingresa tu nombre" class="form-control">
+    <label>Preguntanos lo que quieras</label>
+    <textarea type="textarea" name="text" placeholder="En que te podemos ayudar ?" class="form-control" required></textarea>
+    <div class="help-block with-errors"></div>
   </div>
 
   <div class="form-group">
-    <label>Motivo</label>
-    <textarea type="textarea" name="reason" placeholder="Porque quieres contribuir con nosotros ?" class="form-control"></textarea>
+    <label>Porfavor escribe: <italic>tedxpjipiro</italic> para confirmar que no eres un robot <span class="icon-wink2"></span> </label>
+    <input type="text" name="captcha" class="form-control" required>
+    <div class="help-block with-errors"></div>
   </div>
 
   <div class="form-group text-right">
-    <input class="btn btn-primary" type="submit" name="name" value="Enviar formulario">
+    <input class="btn btn-primary" type="submit" value="Enviar formulario">
   </div>
 </form>
