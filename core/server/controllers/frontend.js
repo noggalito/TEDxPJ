@@ -439,9 +439,10 @@ frontendControllers = {
           sender = email;
         }
 
+        var toAddress = process.env.CONTACT_MAIL || 'hola@tedxparquejipiro.com';
         var mailOptions = {
             from: sender,
-            to: 'mvinan@icloud.com',
+            to: toAddress,
             subject: subject,
             html: "Nombre: " + name + " - Mensaje: " + message + ' - From: ' + email
         };

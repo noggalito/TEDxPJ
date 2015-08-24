@@ -47,13 +47,23 @@
             padding: 2em
             .info-meta
               +display-flex(column, center, start)
-
               & > *
                 margin-bottom: 15px
                 font-size: 14px
                 &:before
                   margin-right: 10px
                   font-size: 20px
+              .row-content
+                +display-flex(row, center, start)
+                .icon-home
+                  margin-right: 10px
+                  font-size: 20px
+                .home-info
+                  +display-flex(column, start, start)
+                span
+                  font-weight: $light !important
+
+
   .footer
     margin-top: 10em
 

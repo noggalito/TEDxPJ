@@ -1,23 +1,37 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat-css');
-var minifyCss = require('gulp-minify-css');
+var gulp         = require('gulp'),
+    sass         = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    concatCss    = require('gulp-concat-css'),
+    CleanCSS     = require('clean-css'),
+    map          = require('vinyl-map'),
+    concatJs     = require('gulp-concat'),
+    uglify       = require('gulp-uglify');
 
 gulp.task('sass', function () {
+  var minify = map(function (buff, filename) {
+    return new CleanCSS({
+    }).minify(buff.toString()).styles;
+  });
+
   return gulp.src('./content/themes/pucara/lib/stylesheets/components.sass')
-    .pipe(sass({
-      style: 'compressed'
-    }).on('error', sass.logError))
-    .pipe(concat('components.css'))
-    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(sass({optionStyle: "compressed"}).on('error', sass.logError))
+    .pipe(concatCss('components.css'))
     .pipe(autoprefixer({
-      cascade: true,
-      browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+      cascade: true
     }))
+    .pipe(minify)
     .pipe(gulp.dest('./content/themes/pucara/assets/css/'));
 });
 
-gulp.task('run:environment', function () {
+
+gulp.task('minify:js', function() {
+  return gulp.src('./content/themes/pucara/lib/js/*.js')
+    .pipe(uglify())
+    .pipe(concatJs('app.js'))
+    .pipe(gulp.dest('./content/themes/pucara/assets/js/min/'));
+});
+
+gulp.task('run:developing', function () {
   gulp.watch('./content/themes/pucara/lib/stylesheets/**/**/**/*.sass', ['sass']);
+  gulp.watch('./content/themes/pucara/lib/js/*.js', ['minify:js']);
 });

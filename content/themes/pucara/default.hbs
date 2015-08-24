@@ -38,16 +38,8 @@
 
     {{!Bootstrap scripts}}
     <script src="{{asset "/js/bootstrap.js"}}"></script>
-    <script src="{{asset "/js/min/nav-min.js"}}"></script>
     <script src="{{asset "/js/validator.js"}}"></script>
-
-    {{! just load scripts in home page}}
-    {{#is "index"}}
-      <script src="{{asset "/js/min/index-min.js"}}"></script>
-      <script src="{{asset "/js/min/counter-min.js"}}"></script>
-    {{/is}}
-
-
+    <script src="{{asset "/js/min/app.js"}}"></script>
 
 </body>
 </html>

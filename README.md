@@ -6,22 +6,22 @@ Tema desarrollado para [Ghost](https://ghost.org/)
 ###Que necesitamos:
 
 1. CLONE :ghost:
-```bash
-  git clone git://github.com/noggalito/TEDxPJ
-```
+  ```bash
+    git clone git://github.com/noggalito/TEDxPJ
+  ```
 1. Instalar todas las dependencias:
-```bash
-  npm install
-```
+  ```bash
+    npm install
+  ```
 1. Instalamos gulp en nivel global para correr el entorno de desarrollo:
-```bash
-  npm install -g gulp
-```
+  ```bash
+    npm install -g gulp
+  ```
 1. Corremos nuestro entorno automatizado mediante [Gulp](http://http://gulpjs.com) (Grunt con Esteroides :) )
-  - con esta linea dejaremos corriendo servira para el entorno de desarrollo del frontend, compilación y minificación de sass (**NOTA**: importar parciales extra que creamos en el archivo components.sass)
-```bash
-  gulp run:environment
-```
+  - esta linea la dejaremos corriendo y servira para el entorno de desarrollo del frontend, compilación y minificación de sass tanto como javascript (**NOTA**: importar parciales extra que creamos en el archivo components.sass y colocar los archivos js en la carpeta lib/js )
+  ```bash
+    gulp run:developing
+  ```
 1. Start Ghost!
   - Local environment: `npm start`
   - On a server: `npm start --production`
