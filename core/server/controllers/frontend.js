@@ -15,6 +15,7 @@ var moment      = require('moment'),
     errors      = require('../errors'),
     routeMatch  = require('path-match')(),
     path        = require('path'),
+    mailer      = require('../mail'),
 
     frontendControllers,
     staticPostPermalink;
@@ -422,6 +423,40 @@ frontendControllers = {
                 return res.render(defaultPage, data);
             }
         });
+    },
+    submitContactForm: function (req, res) {
+        var name    = req.body.name,
+            email   = req.body.email,
+            subject = req.body.subject,
+            message = req.body.text,
+            captcha = req.body.captcha
+
+        var captcha = captcha.toLowerCase();
+        var sender;
+        if (name !== undefined) {
+          sender = name + '<' + email + '>';
+        } else {
+          sender = email;
+        }
+
+        var mailOptions = {
+            from: sender,
+            to: 'mvinan@icloud.com',
+            subject: subject,
+            html: "Nombre: " + name + " - Mensaje: " + message + ' - From: ' + email
+        };
+
+        if (captcha == "tedxpjipiro") {
+          mailer.send(mailOptions).then(function(data) {
+              res.status(200);
+              res.redirect('/contact-success');
+          }).error(function(error){
+              res.status(500);
+              res.redirect('/contact-failure');
+          });
+        }else{
+          res.redirect('/contacto')
+        }
     }
 };
 

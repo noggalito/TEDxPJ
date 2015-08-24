@@ -1,5 +1,4 @@
 #TEDx Parque Jipiro
-=============
 
 ##(WIP) Pucara Theme
 Tema desarrollado para [Ghost](https://ghost.org/)
@@ -19,7 +18,7 @@ Tema desarrollado para [Ghost](https://ghost.org/)
   npm install -g gulp
 ```
 1. Corremos nuestro entorno automatizado mediante [Gulp](http://http://gulpjs.com) (Grunt con Esteroides :) )
-  - con esta linea corremos el entorno de desarrollo frontend, para la compilacion y minificación de sass (importar partials extra en components.sass)
+  - con esta linea dejaremos corriendo servira para el entorno de desarrollo del frontend, compilación y minificación de sass (**NOTA**: importar parciales extra que creamos en el archivo components.sass)
 ```bash
   gulp run:environment
 ```
@@ -30,10 +29,10 @@ Tema desarrollado para [Ghost](https://ghost.org/)
 
 #####Herramientas (Opcionales para compilar css):
 
-- [**Codekit**](https://incident57.com/codekit/) : Lo usamos como compilador de Sass.
-- [***Bootstrap*](http://getbootstrap.com/): framework de diseño base.
+- [**Codekit**](https://incident57.com/codekit/) : Gran herramienta Frontent compila tiempo real y agrega un livereload(cambios mostrados sin recargar el navegador), creando un sevidor local propio.
+- [**Scout**](http://mhs.github.io/scout-app/): Compilador de Sass que trabaja con la libreria externa Compass.
 
 Puedes optar por estas herramientas que cumplen la misma funcion que CodeKit.
 
-- [**Prepos**](https://incident57.com/codekit/) : Herramienta para compilar varios lenguajes.
+- [**Prepos**](https://prepros.io) : Herramienta para compilar varios lenguajes Less, Sass, CoffeScript etc...
 - [**Koala**](http://koala-app.com/): Opcional cumple la misma funcion de CodeKit.

@@ -69,6 +69,9 @@ frontendRoutes = function (middleware) {
     router.get('/', frontend.homepage);
     router.get('*', frontend.single);
 
+    // Mailer contact
+    router.post('/mail', frontend.submitContactForm);
+
     return router;
 };
 
