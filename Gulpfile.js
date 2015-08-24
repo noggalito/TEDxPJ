@@ -2,19 +2,24 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat-css');
-var minifyCss = require('gulp-minify-css');
+var CleanCSS = require('clean-css');
+var map = require('vinyl-map');
+
 
 gulp.task('sass', function () {
+
+  var minify = map(function (buff, filename) {
+    return new CleanCSS({
+    }).minify(buff.toString()).styles;
+  });
+
   return gulp.src('./content/themes/pucara/lib/stylesheets/components.sass')
-    .pipe(sass({
-      style: 'compressed'
-    }).on('error', sass.logError))
+    .pipe(sass({optionStyle: "compressed"}).on('error', sass.logError))
     .pipe(concat('components.css'))
-    .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(autoprefixer({
-      cascade: true,
-      browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+      cascade: true
     }))
+    .pipe(minify)
     .pipe(gulp.dest('./content/themes/pucara/assets/css/'));
 });
 
