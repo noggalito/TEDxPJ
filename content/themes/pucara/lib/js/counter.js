@@ -1,4 +1,4 @@
-var end = new Date("09/21/2015")
+var end = new Date("11/06/2015")
 var second = 1000
 var minute = second * 60
 var hour = minute * 60
@@ -11,7 +11,7 @@ function showRemaining() {
 
 	if (distance < 0) {
 		clearInterval(timer)
-		$(".ready").html("TEDxTalk is Ready")
+		$(".ready").html("TEDx ParqueJipiro es AHORA!!")
 
 		return
 	}
@@ -21,7 +21,7 @@ function showRemaining() {
 	var minutes = Math.floor((distance % hour ) / minute)
 	var seconds = Math.floor( (distance % minute) /second )
 
-	$(".counter").html("<div class='days'>" + days + " <span>dias</span> </div>" + "<div class='hours'>" + hours + " <span>horas</span> </div>" + "<div class='minutes'>" + minutes + " <span>minutos</span> </div>" + "<div class='seconds'>" + seconds + " <span>segundos</span> </div>"  )
+	$(".counter").html("<div class='days'> <span>" + days + "</span><span>dias</span></div>" + "<div class='hours'><span>" + hours + " </span><span>horas</span> </div>" + "<div class='minutes'><span>" + minutes + " </span><span>minutos</span> </div>" + "<div class='seconds'><span>" + seconds + " </span><span>segundos</span> </div>")
 }
 
 timer = setInterval(showRemaining, 1000)

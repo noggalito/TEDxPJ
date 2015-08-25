@@ -17,7 +17,6 @@
     <article class="{{post_class}}">
 
       <section class="share col-md-1">
-        <h5>Click y compartir</h5>
         <div class="share-links">
           <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
               onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
@@ -27,10 +26,6 @@
               onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
               <span class="hidden">Facebook</span>
           </a>
-          <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-             onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-              <span class="hidden">Google+</span>
-          </a>
         </div>
       </section>
 
@@ -38,7 +33,7 @@
         <div class="post-meta">
           <h5>
             <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
-              {{date format="DD MMMM YYYY"}}
+              {{date format="DD MMMM, YYYY"}}
             </time>
           </h5>
         </div>
