@@ -1,0 +1,25 @@
+{
+  "deploy" : {
+    "production" : {
+      "user" : "safezone",
+      "host" : "169.53.133.216",
+      "ref"  : "origin/master",
+      "key" : "/Users/Alejandro/.ssh/safezone_rsa",
+      "repo" : "git@github.com:noggalito/TEDxPJ.git",
+      "path" : "/home/safezone/test",
+      "post-deploy" : "npm install --production && pm2 startOrRestart ecosystem.json --env production"
+    },
+    "dev" : {
+      "user" : "safezone",
+      "host" : "169.53.133.216",
+      "ref"  : "origin/master",
+      "key" : "/Users/Alejandro/.ssh/safezone_rsa",
+      "repo" : "git@github.com:noggalito/TEDxPJ.git",
+      "path" : "/home/safezone/test",
+      "post-deploy" : "npm install --production && pm2 startOrRestart ecosystem.json --env dev",
+      "env"  : {
+        "NODE_ENV": "dev"
+      }
+    }
+  }
+}
