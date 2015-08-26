@@ -1,22 +1,29 @@
 // # Ghost Configuration
-// Setup your Ghost install for various environments
-// Documentation can be found at http://support.ghost.org/config/
-
 var path = require('path'),
     config;
 
 config = {
     // ### Production
-    // When running Ghost in the wild, use the production environment
-    // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
-        mail: {},
+        url: 'http://2015.tedxparquejipiro.com',
+        mail: {
+          transport: "SMTP",
+          options: {
+            service: "Mailgun",
+            auth: {
+              user: process.env.MAILGUN_SMTP_LOGIN,
+              pass: process.env.MAILGUN_SMTP_PASSWORD
+            }
+          }
+        },
         database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
+          client: 'postgres',
+          connection: {
+            host: '127.0.0.1',
+            user: process.env.DATABASE_TEDX_USER,
+            password: process.env.DATABASE_TEDX_PASSWORD,
+            database: process.env.DATABASE_TEDX_DATANAME
+          },
             debug: false
         },
 
@@ -24,7 +31,7 @@ config = {
             // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2368'
+            port: process.env.PORT
         }
     },
 
@@ -64,8 +71,8 @@ config = {
           options: {
             service: 'Mailgun',
               auth: {
-                user: 'postmaster@appc1ca874dfbd64aba92f31743e02cd5eb.mailgun.org',
-                pass: '5a55f4e7a238fe244b3f3ab6fae46831'
+                user: process.env.MAILGUN_SMTP_LOGIN,
+                pass: process.env.MAILGUN_SMTP_PASSWORD
               }
             }
          },
@@ -78,9 +85,7 @@ config = {
             debug: false
         },
         server: {
-            // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
-            // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: '2368'
         },
         paths: {
@@ -89,10 +94,6 @@ config = {
     },
 
     // **Developers only need to edit below here**
-
-    // ### Testing
-    // Used when developing Ghost to run tests and check the health of Ghost
-    // Uses a different port number
     testing: {
         url: 'http://127.0.0.1:2369',
         database: {
@@ -107,9 +108,6 @@ config = {
         },
         logging: false
     },
-
-    // ### Testing MySQL
-    // Used by Travis - Automated testing run through GitHub
     'testing-mysql': {
         url: 'http://127.0.0.1:2369',
         database: {
@@ -128,9 +126,6 @@ config = {
         },
         logging: false
     },
-
-    // ### Testing pg
-    // Used by Travis - Automated testing run through GitHub
     'testing-pg': {
         url: 'http://127.0.0.1:2369',
         database: {
