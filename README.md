@@ -36,3 +36,6 @@ Puedes optar por estas herramientas que cumplen la misma funcion que CodeKit.
 
 - [**Prepos**](https://prepros.io) : Herramienta para compilar varios lenguajes Less, Sass, CoffeScript etc...
 - [**Koala**](http://koala-app.com/): Opcional cumple la misma funcion de CodeKit.
+
+##### deployment
+  - PM2:
