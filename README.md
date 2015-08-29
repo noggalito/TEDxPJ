@@ -37,5 +37,13 @@ Puedes optar por estas herramientas que cumplen la misma funcion que CodeKit.
 - [**Prepos**](https://prepros.io) : Herramienta para compilar varios lenguajes Less, Sass, CoffeScript etc...
 - [**Koala**](http://koala-app.com/): Opcional cumple la misma funcion de CodeKit.
 
-##### deployment
-  - PM2:
+## Deployment
+
+### PM2
+
+##### Quick Start:
+
+[Como empezamos con PM2](http://pm2.keymetrics.io/docs/usage/deployment/)
+
+Nuestro deploy siempre sera así.
+* `pm2 deploy <ecosystem.json> <environment> update` (para actualizar el server).
