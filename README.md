@@ -1,9 +1,15 @@
 #TEDx Parque Jipiro
 
-##(WIP) Pucara Theme
+## Pucara Theme
 Tema desarrollado para [Ghost](https://ghost.org/)
 
-###Que necesitamos:
+### Que necesitamos:
+  * Postgresql
+  * NodeJs
+  * Ghost
+  * pm2 (deploy y control de app)
+
+### Pasos instalacion
 
 0. CLONE :ghost:
   ```bash
@@ -37,5 +43,13 @@ Puedes optar por estas herramientas que cumplen la misma funcion que CodeKit.
 - [**Prepos**](https://prepros.io) : Herramienta para compilar varios lenguajes Less, Sass, CoffeScript etc...
 - [**Koala**](http://koala-app.com/): Opcional cumple la misma funcion de CodeKit.
 
-##### deployment
-  - PM2:
+## Deployment
+
+### PM2
+
+##### Quick Start:
+
+[Como empezamos con PM2](http://pm2.keymetrics.io/docs/usage/deployment/)
+
+Nuestro deploy **sera siempre de esta manera** unicamente actualizar.
+* `pm2 deploy <ecosystem.json> <environment> update` (para actualizar el server).
