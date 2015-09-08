@@ -6,5 +6,4 @@ node_modules/
 npm-debug.log
 ghost-dev.db
 content/images/*
-ecosystem.json5
 ecosystem.json

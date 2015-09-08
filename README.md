@@ -49,7 +49,15 @@ Puedes optar por estas herramientas que cumplen la misma funcion que CodeKit.
 
 ##### Quick Start:
 
-[Como empezamos con PM2](http://pm2.keymetrics.io/docs/usage/deployment/)
+Instalamos PM2:
+* `npm install -g pm2`
 
-Nuestro deploy **sera siempre de esta manera** unicamente actualizar.
-* `pm2 deploy <ecosystem.json> <environment> update` (para actualizar el server).
+Nos aseguramos que el servidor tenga nuestra llave publica
+
+  ```bash
+  ssh-keygen -t rsa
+  ssh-copy-id -i <nombrekey.pub> user@domain.com
+  ```
+
+Nuestro deploy:
+* `pm2 deploy ecosystem.json5 production`
