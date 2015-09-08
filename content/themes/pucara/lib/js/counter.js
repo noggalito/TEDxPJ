@@ -1,3 +1,5 @@
+"use strict"
+
 var end = new Date("11/06/2015")
 var second = 1000
 var minute = second * 60
@@ -19,7 +21,7 @@ function showRemaining() {
 	var days = Math.floor(distance / day)
 	var hours = Math.floor( (distance  % day) / hour )
 	var minutes = Math.floor((distance % hour ) / minute)
-	var seconds = Math.floor( (distance % minute) /second )
+	var seconds = Math.floor( (distance % minute) / second )
 
 	$(".counter").html("<div class='days'> <span>" + days + "</span><span>dias</span></div>" + "<div class='hours'><span>" + hours + " </span><span>horas</span> </div>" + "<div class='minutes'><span>" + minutes + " </span><span>minutos</span> </div>" + "<div class='seconds'><span>" + seconds + " </span><span>segundos</span> </div>")
 }
