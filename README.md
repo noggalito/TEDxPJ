@@ -45,6 +45,13 @@ Puedes optar por estas herramientas que cumplen la misma funcion que CodeKit.
 
 ## Deployment
 
+### How to deploy
+after setting up `pm2`, it will look for environment variables / configs inside
+
+`~/pucara/shared/ecosystem.json`
+
+You can find an example on `production.ecosystem.json.example`
+
 ### PM2
 
 ##### Quick Start:
