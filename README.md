@@ -67,4 +67,4 @@ Nos aseguramos que el servidor tenga nuestra llave publica
   ```
 
 Nuestro deploy:
-* `pm2 deploy ecosystem.json5 production`
+* `./deploy.bash production`
