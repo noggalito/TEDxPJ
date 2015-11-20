@@ -53,7 +53,7 @@ execute("git config --global user.name", function(name) {
         channel   : slackChannel,
         username  : botName,
         icon_emoji: iconNotify,
-        text: "<mailto:" + deployEmail + "|" + deployUsername + "> deployed version <http://github.com/noggalito/tedxpj/commits/" + version + "|" + version + "> of application <" + projectUri + "|" +  projectName + "> to " + slackEnvironment
+        text: "<mailto:" + deployEmail + "|" + deployUsername + "> deployed version <http://github.com/noggalito/tedxpj/commit/" + version + "|" + version + "> of application " +  projectName + " to <" + projectUri + "|" + slackEnvironment + ">"
       }, function (err, response) {
         console.log(response)
       });
