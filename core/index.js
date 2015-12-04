@@ -1,5 +1,3 @@
-require('../newrelic');
-
 // # Ghost bootloader
 // Orchestrates the loading of Ghost
 // When run from command line.
