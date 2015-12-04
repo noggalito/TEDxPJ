@@ -13,20 +13,6 @@
         "MAILGUN_SMTP_LOGIN"    :"$SMTP_LOGIN",
         "MAILGUN_SMTP_PASSWORD" :"$SMPT_PASSWD"
       }
-    },
-    {
-      "name"             : "slack-notify",
-      "script"           : "slack-notifications.js",
-      "exec_interpreter" : "babel-node",
-      "env_production":{
-        "SLACK_ENVIRONMENT"  :"$ENV",
-        "SLACK_PROJECT_URL"  :"$PROJECT_URL",
-        "SLACK_HOOK_URL"     :"$HOOK_URL",
-        "SLACK_CHANNEL"      :"$HOOK_CHANNEL",
-        "SLACK_PROJECT_NAME" :"$HOOK_PROJECT",
-        "SLACK_PROJECT_ICON" :"$HOOK_ICON",
-        "SLACK_BOT_NAME"     :"$HOOK_BOT_NAME"
-      }
     }
   ]
 }
