@@ -6,7 +6,7 @@ var Slack   = require('slack-node'),
 
 var defaults = {
   hook_url: "https://hooks.slack.com/services/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",
-  project_url: "http://2015.tedxparquejipiro.com",
+  project_url: "http://2016.tedxparquejipiro.com",
   slack_channel: "#tedxpj",
   project_name: "TEDx ParqueJipiro"
 };

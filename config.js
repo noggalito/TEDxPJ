@@ -5,7 +5,7 @@ var path = require('path'),
 config = {
     // ### Production
     production: {
-        url: 'http://2015.tedxparquejipiro.com',
+        url: 'http://2016.tedxparquejipiro.com',
         mail: {
           transport: "SMTP",
           options: {
