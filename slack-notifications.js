@@ -8,7 +8,8 @@ var defaults = {
   hook_url: "https://hooks.slack.com/services/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",
   project_url: "http://2016.tedxparquejipiro.com",
   slack_channel: "#tedxpj",
-  project_name: "TEDx ParqueJipiro"
+  project_name: "TEDx ParqueJipiro",
+  repo: "http://github.com/noggalito/tedxpj"
 };
 
 var webhookUri       = process.env.SLACK_HOOK_URL || defaults["hook_url"],
