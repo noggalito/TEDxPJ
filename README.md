@@ -66,5 +66,5 @@ Nos aseguramos que el servidor tenga nuestra llave publica
   ssh-copy-id -i <nombrekey.pub> user@domain.com
   ```
 
-Nuestro deploy:
+#### deploying production
 * `./deploy.bash production`
