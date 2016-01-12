@@ -2,7 +2,7 @@
   "deploy" : {
     "production" : {
       "user"        : "miguel",
-      "host"        : "2015.tedxparquejipiro.com",
+      "host"        : "2016.tedxparquejipiro.com",
       "ref"         : "origin/master",
       "repo"        : "git@github.com:noggalito/TEDxPJ.git",
       "path"        : "~/pucara",
