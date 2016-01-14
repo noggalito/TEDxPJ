@@ -20,20 +20,6 @@ var webhookUri       = process.env.SLACK_HOOK_URL || defaults["hook_url"],
     slackEnvironment = process.env.ENV || "unknown",
     botName          = process.env.SLACK_BOT_NAME || "Squirrel";
 
-var filePath = path.join(__dirname, '../.deploys');
-
-function deploysRead () {
-  return fs.readFileSync(filePath, {encoding: 'utf-8'});
-}
-
-function lastVersionDeployed() {
-  var deploysVersions, lastElement, lastVersion;
-  deploysVersions = deploysRead().split('\n')
-  lastElement = deploysVersions.length - 2
-  lastVersion = deploysVersions[lastElement]
-  return lastVersion
-}
-
 var slack = new Slack();
 slack.setWebhook(webhookUri);
 
