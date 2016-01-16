@@ -20,39 +20,28 @@
       z-index: -1
 
   &-content
-    position: absolute
-    top: 2em
-    left: 0
-    right: 0
     height: 100%
     +display-flex(column, center, center)
     .container
       &::before, &::after
         display: none
-      &-logo
-        width: 100%
-        margin: 0 auto
-        .logo
-          width: 100%
       .blog-description
-        margin-top: 5em
         text-align: center
         +display-flex(column, center, center)
         h1
-          margin-bottom: 30px
+          margin-bottom: 20px
           font-weight: $bold
+          font-size: 32px
         p
           font-size: 17px
         & > *
           text-align: center
 
     .btn-about
-      margin-top: 2em
-      display: flex
-      justify-content: center
+      margin-top: 5em
       .btn-phantom-white
         transition: 0.3s ease
-        padding: 1em 2em
+        padding: 0.8em 1.7em
         font-weight: $bold
         &:hover
           background-color: $color-redTEDx
@@ -65,13 +54,6 @@
       img
         width: 100%
 
-    &-content
-      .container
-        &-logo
-          width: $size-cover-logo
-          margin: 0 auto
-
-
 @media (min-width: 991px)
   .cover
     &-image
@@ -81,16 +63,10 @@
 
     &-content
       .container
-        width: 100%
-        &-logo
-          width: $size-cover-logo
-          margin: 0
-          .logo
-            width: 100%
         .blog-description
-          margin-top: 3em
+          h1
+            font-size: 45px
           & > *
             text-align: center
-            width: $size-cover-description
       .btn-about
         margin-top: 3em
