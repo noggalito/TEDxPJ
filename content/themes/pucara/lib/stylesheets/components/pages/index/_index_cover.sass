@@ -24,6 +24,8 @@
     top: 2em
     left: 0
     right: 0
+    height: 100%
+    +display-flex(column, center, center)
     .container
       &::before, &::after
         display: none
@@ -36,8 +38,9 @@
         margin-top: 5em
         text-align: center
         +display-flex(column, center, center)
-        h4
-          font-size: 20px
+        h1
+          margin-bottom: 30px
+          font-weight: $bold
         p
           font-size: 17px
         & > *
@@ -47,6 +50,14 @@
       margin-top: 2em
       display: flex
       justify-content: center
+      .btn-phantom-white
+        transition: 0.3s ease
+        padding: 1em 2em
+        font-weight: $bold
+        &:hover
+          background-color: $color-redTEDx
+          border-color: $color-redTEDx
+          box-shadow: 2px 2px 4px solid black
 
 @media (min-width: 768px)
   .cover
@@ -78,9 +89,8 @@
             width: 100%
         .blog-description
           margin-top: 3em
-          +display-flex(column, center, end)
           & > *
-            text-align: right
+            text-align: center
             width: $size-cover-description
       .btn-about
         margin-top: 3em
